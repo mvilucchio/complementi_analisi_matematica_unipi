@@ -1,0 +1,371 @@
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\pagestyle{headings}
+
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={175mm,243mm},
+ left=17mm,
+ top=20mm,
+}
+
+\author{Antonio Tagliente, Davide Perrone, Matteo Vilucchio}
+
+\title{Possibili soluzioni agli esami di "Complementi di Analisi"\\Corso di Laurea in Fisica\\ Università di Pisa}
+
+\begin{document}
+\maketitle
+\section*{Compito 1}
+\begin{itemize}
+\item [1.]
+Sia $f (x, y) = \abs{3x^{2}-2y^{4}}$ e sia D definito da:
+\begin{equation*}
+D:=\{(x, y)\in \mathbb{R}^{2} : x^{2} + y^{2} - 2x \leq 0\}.
+\end{equation*}
+Determinare estremo inferiore e superiore di f in D specificando se si tratta di
+massimo e/o minimo e gli eventuali corrispondenti punti di massimo/minimo.\\
+\emph{Svolgimento}\\
+\emph{ERRORE NELLO SVOLGIMENTO, RICONTROLLARE I PUNTI DI TAGLIO}
+f(x,y)=$ | 3x^2-2y^4|$
+studiamo prima f nel caso in cui $3x^2 \ge 2y^4$.
+
+$\nabla f=(6x,-8y)$ che si annula solo in (0,0).
+D=$\{(x,y):x^2+y^2-2x \le 0)\}$
+
+Sia $ g= x^2+y^2-2x=0$
+$ \nabla g=(2(x-2),2y)$ che è uguale a zero in (1,0).
+Procediamo ora con i moltiplicatori di Lagrange:
+\begin{equation}
+\begin{cases} 
+ 2\lambda (x-1)=9x\\2\lambda y=-4y^3 
+\end{cases}
+ \end{equation}
+ Dal sistema troviamo $ \lambda=-4y^2$ che sostituita nella prima da: $ (y_1)^{2}~=~-\frac{x}{4x-1}$.
+ 
+Considerando $g(x,y_1)$ troviamo $ x_{1,2}=\frac{5}{2},\frac{1}{2} $, la prima soluzione non è accetabile in quanto da un valore di $y^2$ negativo, la seconda da i valori di $ y=\pm \frac{\sqrt{3}}{2} $, tuttavia questi punti non sono accettabili in quanto danno un valore di f negativo (quando questa era supposta positiva.)
+
+
+Consideriamo ora $f(x,y)=2y^4-3x^2$, usando di nuovo i moltiplicatori di lagrange otteniamo di nuovo i punti $ (\frac{1}{2}  , \pm \frac{\sqrt{3}}{2} )$ che questa volta vanno bene.
+Deduciamo dunque da i punti stazionari trovati che f ha minimo in zero e massimo in 3 in due punti  su D.
+
+
+
+
+ \item[2.] Sia $f : \mathbb{R}^{2} \rightarrow \mathbb{R}$ definita da:
+\begin{equation*}
+f(x,y)=\frac{x^{2}y^{3} + \sin(x^{2}y)}{1 + x^{4} + \abs{y}^{7}}
+\end{equation*}
+\begin{enumerate}[label=(\alph*)]
+\item Provare che l'origine è un punto stazionario e classificarlo
+\item Stabilire se $f$ ammette massimo e/o minimo su $\mathbb{R}^{2}$
+\item Provare che $f$ ammette almeno 5 punti stazionari
+\item (Bonus) Sia $Q_{R}=[R,+\infty[\times[R,+\infty[$ e sia $M(R)=sup_{Q_{R}} f(x,y)$. Calcolare al variare di $\alpha \in \mathbb{R}$:
+\begin{equation*}
+\lim_{R\to +\infty} R^{\alpha} M(R)
+\end{equation*} 
+\end{enumerate}
+\emph{Svolgimento}
+\begin{enumerate}[label=(\alph*)]
+\item Sviluppando con Taylor attorno a 0 fino all'ordine 5 al numeratore, si ha:
+\begin{equation}
+f(x,y)\approx \frac{x^{2}y^{3} + x^{2}y}{1 + x^{4} + \abs{y}^{7}}.
+\end{equation}
+Sviluppando il denominatore si ottiene, all'ordine più basso,
+\begin{equation}
+f(x,y)\approx (x^{2}y)(1 - x^{4} + o((x^{2}+y^{2})^{2}))\approx x^{2}y
+\end{equation}
+che è nulla in $(0,0)$. L'origine non è né massimo né minimo, in quanto la curva $\gamma(t):\{x=t, y=t, -1<t<1\}$, passa per $(0,0)$ ed assume valori sia positivi che negativi in un intorno del punto, essendo dispari la variabile $y$ al numeratore.
+\item Per stabilire se la funzione ammetta massimo o minimo, se ne studia il comportamento all'infinito.
+\begin{equation}
+\lim_{x^2+y^2\to+\infty} f(x,y).
+\end{equation}
+Prendendo la curva $\gamma_{1}(t):\{x=t, y=0\}$ e facendo tendere $t$ ad infinito, la funzione risulta costantemente pari a 0. Quindi il limite, se esiste, vale 0.
+\begin{equation}
+0 \leq \abs{f(x,y)} \leq \frac{x^{2}y^{3}}{x^{4}+ \abs{y}^{7}}.
+\end{equation}
+Cambiando variabile, ponendo $\abs{y}^{7}=t^{4}$, e $x^{2} + t^{2} = r^{2}$, (ricordando che $\sin(x)^{4} + \cos(x)^{4} \geq m >0$) si ottiene una stima dall'alto, ossia
+\begin{equation}
+0 \leq \frac{x^{2}y^{3}}{x^{4}+ \abs{y}^{7}} \leq \frac{r^{2+12/7}}{mr^{4}} \rightarrow 0.
+\end{equation}
+La funzione assume inoltre almeno un valore positivo (nel primo quadrante) ed uno negativo (nel quarto). Quindi, per il teorema di Weierstrass generalizzato, la funzione ammette sia massimo sia minimo.
+\item Si giunge alla soluzione notando che $f(-x,y)=f(x,y)$, quindi i due punti trovati nel primo e nel quarto quadrante sono simmetrici a due punti nel terzo e nel secondo. Questi, assieme all'origine, sono 5 dei punti stazionari della funzione.
+\item (bonus) Per risolvere il limite richiesto si studia la funzione sull'insieme dato, cercandone il $sup$, con il metodo dei moltiplicatori di Lagrange. Per $R \rightarrow \infty$ si avrà, definitivamente, che $\sin(x^2y)$ non influisce nello studio della funzione, ed i punti stazionari si troveranno al di fuori del rettangolo. Dunque si studia il comportamento della funzione sul bordo, ossia per $x=R, y \in [R,+\infty[$ e $y=R, x \in [R,+\infty[$.
+Nel primo caso si ottiene:
+\begin{equation}
+\frac{R^{2}y^{3}}{1+R^{4}+y^{7}}
+\end{equation}
+che ha massimo per $y=0$ o $4y^{7}=3+3R^{4}$. Entrambi i risultati non sono accettabili, poichè fuori dal dominio. Per x si ottiene invece $x\approx R^{7/4}, y=R$. Quindi il limite diventa:
+\begin{equation}
+\lim_{R\to +\infty} \frac{R^{\alpha + 19/4}}{1+2R^{7}}
+\end{equation}
+che quindi tende a 0 per $\alpha < -9/4$, ad $1/2$ per $\alpha = -9/4$.  
+\end{enumerate}
+
+
+
+
+
+
+ \item[3.] Sia $V := \{(x, y, z)\in \mathbb{R}^{3} : x^{2} + y^{2} + z^{2} \leq 4, x^{2} + z^{2} \geq 1\}$. Calcolare
+\begin{equation*}
+\int_{V} \abs{y}\; dx\; dy \; dz.
+\end{equation*}
+\emph{Svolgimento}\\
+Per svolgere l'integrale con il valore assoluto è possibile decomporre l'integrale in due parti, suddividendo il dominio. Si ha quindi
+\begin{equation}
+-\int_{V} y\; dx\; dy \; dz\: + \: 2\int_{V^{+}} y\; dx\; dy \; dz\:,
+\end{equation}
+con $V^{+} = \{(x, y, z)\in \mathbb{R}^{3} : x^{2} + y^{2} + z^{2} \leq 4,\; x^{2} + z^{2} \geq 1,\; y \geq 0 \}$ .\\
+Il primo integrale è uguale a 0, poichè $f(x,-y)=-f(x,y)$ ed il dominio è simmetrico in y.
+Per il secondo, invece, si passa alle coordinate cilindriche, $x^{2} + z^{2} = \rho^{2},\: y=Y$, e si integra utilizzando il teorema di Guldino, in quanto si ha a che fare con un solido di rotazione, e scrivendo l'insieme come normale rispetto all'asse $Y$, sul piano $(Y,\rho)$.\\
+Dunque, trovato $A=(1,\sqrt{3})$ punto di intersezione, $D = \{(\rho, Y)\in \mathbb{R}^{2} : 1 \leq \rho^{2} \leq \sqrt{4 - Y^{2}},\; 0 \leq Y \geq \sqrt{3} \}$, e l'integrale diventa
+\begin{equation}
+4\pi\int_{0}^{\sqrt{3}} Y\; dY \int_{1}^{\sqrt{4-Y^{2}}} \rho d\rho\:,
+\end{equation}
+ossia:
+\begin{equation}
+2\pi\int_{0}^{\sqrt{3}} Y(3-Y^{2}) \; dY \: = \: \frac{\pi}{2}(6Y^{2} - Y^{4})\bigg{|}_{0}^{\sqrt{3}}\: = \:\frac{9\pi}{2}
+\end{equation}
+
+
+
+
+
+\item [4.]
+Sia $F(x,y,z)=(x+y,x^2,z)$ e sia:
+\begin{equation*}
+S= \{(x,y,z):x^2+y^2+z^2+y^2z^2 \le 7 ,y \ge 0, z \ge 0 \}
+\end{equation*}
+orientata prendendo in $(2, 1, 1)$ la normale che punta verso le y negative. Calcolare
+il flusso del rotore di F attraverso S.\\
+\emph{Svolgimento}\\
+Dobbiamo calcolare $ \int_{S} rot(F)\,dS $, la superficie S è orientata prendendo in (2,1,1) la normale che punta verso le y negative.
+Per il teorema di stokes l'integrale è lo stesso su superfici che hanno lo stesso bordo; prendiamo le due superfici che si ottengono ponendo $y=0$ e $z =0$; $ rot(F)= (2x-1) \hat{z} $.
+L'integrale su $S_1={x^2+y^2 = 7 y \ge 0}$ è nulllo in quanyto $S_1 $ ha normale (0,1,0) che ha prodotto scalare con $rot(F)$ nullo.
+L'integrale su $ S_2=\{x^2+z^2=7, z \ge 0 \}$ è uguale a :
+\begin{equation}
+\int_{S_2}(2x-1)\,ds=\int_{0}^{\pi} \int_{0}^{\sqrt{7}} (2\rho \cos(\theta)-1) \rho d\rho d\theta=-\frac{7}{2}\pi
+\end{equation}
+\end{itemize}
+
+
+
+
+
+\section*{Compito 2}
+\begin{itemize}
+\item[1.] Siano 
+\begin{equation*}
+S := \{ (x, y, z) \in \mathbb{R}^3 : x^2 + y^2 + x^2z^2 = 1, x\ge 0\} \quad f(x, y, z) =  x + y - z^2
+\end{equation*}
+Determinare $\inf_S f$ e $\sup_S f$ precisando se si tratta di minimo/massimo e gli eventuali corrispondenti punti di minimo/massimo.\\
+\emph{Soluzione}\\
+L'insieme $S$ non è limitato in quanto, nel caso $x = 0$ la $y$ è fissata a $\pm 1$ ma la $z$ può assumere tutti i valori in $\mathbb{R}$.
+Riscrivendo la condizione dell'insieme otteniamo che $y^2 = 1-x^2 (1-z^2)$, siccome $x^2 (1-z^2)$ è una quantità sempre positiva $y$ sarà sempre limitato tra $-1 \le y \le 1$. Per $x$ abbiamo che $x^2 = \frac{1-y^2}{1+ z^2}$ e quindi risulta che $0 \le x \le 1$. Le $z$ risultano illimitate.
+Il limite all'infinito nell'insieme $S$ risulta:
+\begin{equation}
+\lim\limits_{\norm{(x,y)} \rightarrow +\infty} x + y - z^2 \le \lim\limits_{\norm{(x,y)} \rightarrow +\infty} 2 - z^2 = - \infty 
+\end{equation}
+Il limite su $S$ è $- \infty$, quindi $\inf_{S} f = -\infty$. Per il teorema di Weierstrass generalizzato sappiamo anche che esiste un punto di massimo in $S$.\\
+Per trovare l'inf avremmo potuto considerare la curva $(0, 1, t)$ con $t \in \mathbb{R}$, interamente contenuta in $S$, e trovare che il limite è $-\infty$, ma questo non sarebbe bastato ad applicare Weierstrass.\\
+La funzione avrà sicuramente il massimo per $z=0$, quindi basta studiare $h(x,y)=f(x,y,0)=x+y$ su $S' = \{ (x,y) \in \mathbb{R}^2 : x^2 + y^2 =1, x\ge 0 \}$. Senza scomodare i moltiplicatori di Lagrange sostituiamo il bordo nella funzione e studiamo la funzione di una varaibile che troviamo.
+\begin{equation}
+g(y) = h(\sqrt{1-y^2}, y) = y + \sqrt{1-y^2} \quad \dv{g}{y} = y - \frac{y}{\sqrt{1-y^2}} = 0
+\end{equation}
+La derivata si annulla in $y = \pm \frac{\sqrt{2}}{2}$ e i corrispondenti punti per $h(x, y)$ sono $(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2})$ e $(\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2})$. Il massimo si ha per il primo dei due punti e la funzione vale $\sqrt{2}$. 
+I punti di taglio per $h$ sono $(0, \pm 1)$ e la funzione vale $\pm 1$.
+Quindi il $\max_{S} f = \sqrt{2}$.
+
+
+È VERAMENTE NECESSARIO FARE IL GRDIENTE?
+Controlliamo se si annulla il gradiente di $f$ in $S$.
+\begin{equation}
+\grad f = \begin{pmatrix}
+1 \\ 1 \\ -2z
+\end{pmatrix} \neq \begin{pmatrix}
+0 \\ 0\\ 0
+\end{pmatrix} \quad \quad \forall (x,y,z) \in \mathbb{R}^3
+\end{equation}
+
+
+
+\item[2.] Sia $Q := [1,+\infty[\times [1,+\infty[$.
+\begin{enumerate}[label=(\alph*)]
+\item Stabilire se convergono:
+\begin{equation*}
+\int_{Q}\frac{\arctan(xy)}{x^{2}+y^{2}}dxdy,\quad \int_{Q}\frac{\arctan(xy)}{x^{2}+y^{4}}dxdy
+\end{equation*}
+\item (Bonus) Sia $Q_{n} = [n,2n]\times [n,2n]$. Calcolare, al variare di $\alpha \in \mathbb{R}$:
+\begin{equation*}
+\lim_{n\to +\infty}n^{\alpha}\int_{Q_{n}}\frac{\arctan(xy)}{x^{2}+y^{4}}dxdy
+\end{equation*}
+\end{enumerate}
+\emph{soluzione}\\
+\begin{enumerate}[label=(\alph*)]
+\item Il numeratore è crescente per entrambe le variabili, quindi, nell'insieme, si ha $\arctan(xy) \geq \arctan(1) = \pi/4$.
+Quindi vale:
+\begin{equation}
+\frac{\pi}{4}\int_{Q}\frac{1}{x^{2}+y^{2}}dxdy\leq\int_{Q}\frac{\arctan(xy)}{x^{2}+y^{2}}dxdy
+\end{equation}
+Passando alle coordinate polari e restringendo Q in modo da avere $\pi/6\leq\theta\leq\pi/3$ (per non avere problemi con gli angoli), l'integrale diverge.\\
+Per il secondo si ha, maggiorando l'$\arctan(xy)$:
+\begin{equation}
+\int_{Q}\frac{\arctan(xy)}{x^{2}+y^{4}}dxdy \leq \int_{Q}\frac{\pi}{4}\frac{1}{x^{2}+y^{4}}dxdy.
+\end{equation}
+A questo punto, cambiando variabile, ponendo $x^{2}=z^{4}$ ed infine passando in polari con $y^{2}+z^{2}=r^{2}$:
+\begin{equation}
+\int_{Q}\frac{\pi}{4}\frac{1}{x^{2}+y^{4}}dxdy\leq\int_{0}^{\pi/4}d\theta\int_{2}^{+\infty}\frac{2r^{2}}{mr^{4}} < +\infty
+\end{equation}
+dove uno dei fattori $r$ deriva dal primo cambio di variabile, il secondo dal passaggio in polari, con $m>0$ minorazione di $\sin(\theta)^{4}+\cos(\theta)^{4}$
+\item cambio di variabile?
+\end{enumerate}
+
+
+\item[3.] Sia T il triangolo del piano $xy$ di vertici $(1, 0)$, $(2, 0)$ e $(3, 2)$ sia V il solido
+ottenuto da una rotazione completa di T intorno all’asse y. Calcolare il volume e
+le coordinate del baricentro di V.\\
+\emph{soluzione}\\
+La figura è un solido di rotazione, quindi, per calcolarne volume e baricentro, si utilizza il teorema di Guldino. Si sceglie quindi l'asse $y$ come privilegiato e si integra come insieme normale rispetto a quest'asse. La figura è compresa tra le rette $y=x-1$, $y=2x-4$, $y=0$. Quindi:
+\begin{equation}
+V \; = \; 2\pi\int_{0}^{2}dy\int_{y+1}^{(y+4)/2}xdx \; = \; 3\pi\int_{0}^{2}(1-y^2)dy\; = \; 4\pi
+\end{equation}
+Per le coordinate del baricentro si studia solo la coordinata y, in quanto le altre sono uguali a 0 per simmetria. Quindi:
+\begin{equation}
+\frac{2\pi}{V}\int_{0}^{2}dy\int_{y+1}^{(y+4)/2}yxdx \; = \; \frac{3}{4}\int_{0}^{2}y(1-y^2)dy\; = \; \frac{3}{4}
+\end{equation}
+\item[4.] Sia $\gamma$ la curva del piano $(x, y)$ definita da: $\gamma(t) = (t^{2} - 2t^{3},t-t^{2} )$, con $0 \leq t \leq 3/2$.
+\begin{enumerate}[label=(\alph*)]
+\item Determinare se $\gamma$ è semplice e farne un disegno approssimativo.
+\item Determinare le intersezioni tra $\gamma$ e la retta $6y = x$.
+\item Sia D la regione di piano racchiusa da $\gamma \cup \{6y = x\}$. Calcolare l’area di D.
+\end{enumerate}
+\emph{Soluzione}\\
+\begin{enumerate}[label=(\alph*)]
+\item Per dimostrare che $\gamma$ è semplice basta trovare una funzione $G(x(t),y(t))$ monotona, ad esempio $G(x,y)=x-y^2$, che, calcolata nelle componenti della curva, diventa $G(x(t),y(t))=-t^4$, che è monotona nell'intervallo di $t$ considerato
+\item Le intersezioni si trovano sostituendo nella retta $6y=x$ le componenti della curva. Si ritrovano quindi intersezioni per $(x,y)=(0,0)$ e $(x,y)=(-9/2,-3/4)$.
+\item Per calcolare l'area si può utilizzare il teorema di Gauss Green, poichè
+\begin{equation}
+area(D)\; = \; \int_{D}1dxdy \; = \; \int_{\partial^{+}D}F_{x}dy; \: divF=1
+\end{equation}
+con $F_{x}$ componente x della funzione vettoriale $F$ e $\partial^{+}D$ bordo del dominio costituito dalle due curve $\gamma$ e $\gamma_{1}$:
+\begin{equation}
+\gamma=
+\begin{cases}
+x=t^2 - 2t^3 \\
+y= t - t^2 \\
+0 \leq t \leq 3/2
+\end{cases}
+\gamma_{1}=
+\begin{cases}
+x=6t\\
+y=t\\
+-\frac{3}{4} \leq t \leq 0.
+\end{cases}
+\end{equation}
+L'integrale quindi diventa, scegliendo $F=(x,0,0)$:
+\begin{equation}
+\int_{0}^{3/2}(t^2 - 2t^3)(1-2t)dt\; + \; \int_{-3/4}^{0}6tdt \;=
+\end{equation}
+\begin{equation*}
+= \;t^3\bigg(\frac{1}{3} - t + \frac{4}{5}t^2 \bigg) \bigg|_{0}^{3/2} + 3t^2\bigg|_{-3/4}^{0} = \frac{9}{20}
+\end{equation*}
+\end{enumerate}
+\end{itemize}
+
+
+\section*{Compito 3}
+\begin{itemize}
+\item [1.]
+\item [2.]
+\item [3.] Sia $B$ la sfera di $\mathbb{R}^3$ di centro $(1,0,2)$ e raggio 2. Calcolare
+\begin{equation*}
+\int_{B} |x| dxdydz
+\end{equation*}
+\emph{soluzione}\\
+Per prima cosa facciamo una traslazione al centro della sfera ed introduciamo le nuove variabili come $t = x -1$, $u = y$ e $v = z -2$. Cos' l'integrale diventa:
+\begin{equation}
+\int_{B'} |t + 1| dtdudv
+\end{equation}
+e il dominio diventa la sfera di raggio 2 centrata nell'origine. DIvidiamo il dominio nella parte in cui l'argomento del valore assoluto è positivo e quella in cui è negativo, rispettivamente saranno \\$A_{+} = \{(t, u,v) \in \mathbb{R}^3 : t^2 + u^2 + v^2 \le 2, \: t \ge -1\}$ e \\$A_{-} = \{(t,u,v) \in \mathbb{R}^3 :t^2 + u^2 + v^2 \le 2, \: t \le -1\}$.\\
+Possiamo quindi scegliere diverse strade: sommare i due integrali sui due dominii con i segni cambiati, fare l'integrale su $A$ e sommare/sottrarre due volte l'integrale su uno dei due sottodominii. Noi calcoleremo:
+\begin{equation}
+-\int_A t + 1 \: dtdudv + 2 \int_{A_{+}} t + 1 \: dtdudv
+\end{equation}
+Nel primo integrale il contributo dato da $t$ è nullo in quanto è una funzione "dispari" su un dominio simmetrico. Rimane quindi solamente il volume di una sfera di raggio 2.
+\begin{equation}
+\int_A t+1 \: dtdudv = \frac{32}{3} \pi
+\end{equation}
+Per integrare il secondo pezzo utilizziamo un sistema di coodinate cilindriche con asse privilegiato $t$. 
+\begin{equation}
+\int_{A_{+}} t+ 1 \: dtdudv = \int_{-1}^{2}dt \int_0^{2\pi} d\theta \int_{0}^{\sqrt{4-t^2}} (t+1) \rho d\rho =
+\end{equation}
+\begin{equation*}
+=\pi \int_{-1}^{2} (4- t^2)(t + 1) dt = \pi \int_{-1}^{2} t4 - t^3 + 4 -t^2 dt = \pi \Big(2t^2 -\frac{t^4}{4} + 4t -\frac{t^3}{3}\Big)\Big|_{-1}^{2} = \pi \frac{45}{4}
+\end{equation*}
+Per il calcolo dell' integrale risulta:
+\begin{equation}
+-\frac{32}{3} \pi + 2 \Big( \frac{45}{4} \pi \Big) = \frac{71}{6}\pi
+\end{equation}
+\item [4.] Si consideri per $\alpha $ la forma differenziale
+
+\begin{equation*}
+\omega_{\alpha} = e^{\alpha xy} (xy + y^2 + 1) dx + e^{\alpha xy} (x^2 + yx + 1) dy + dz
+\end{equation*} 
+e sia $\gamma (t) = (\cos^3t, \sin t, \cos t)$ con $0 < t < \pi$.
+Calcolare per $\alpha = 0$ e $\alpha = 1$
+\begin{equation*}
+\int_{\gamma} \omega_{\alpha}
+\end{equation*}
+\emph{soluzione}\\
+Ponendo le varie componenti della forma come $f_1, f_2, f_3$ verifichiamo l chiusura della forma con le condizioni:
+\begin{equation}
+\begin{cases}
+f_{1y} = f_{2x} \\
+f_{2z} = f_{3y} \\
+f_{3x} = f_{1z}
+\end{cases}
+\end{equation}
+La seconda e la terza condizione sono sempre verificate per $\forall \alpha \in \mathbb{R}$. Pe la prima condizione abbiamo che:
+\begin{equation}
+\alpha x e^{\alpha xy} (xy + y^2 + 1) + e^{\alpha xy} (x + 2y) = \alpha y e^{\alpha xy} (x^2 + yx + 1) + e^{\alpha xy} (2x + y)
+\end{equation}
+\begin{equation*}
+(\alpha +1)x + 2y = 2x + (\alpha +1)y
+\end{equation*}
+la forma risulta chiusa solamente per $\alpha = 1$.\\
+
+Siccome per $\alpha = 1$ $\omega$ è una forma chiusa possiamo sostituire a $\gamma (t)$ una curva continua e semplice con gli stessi etremi. Prendiamo quindi $\gamma_1 (t) = (-t,0,-t)$ con $-1 \le t \le 1$. Calcoliamo adesso l'integrale di linea:
+\begin{equation}
+\int_{\gamma_1} \omega_1 = \int_{\gamma_1} \limits\sum_{i=1}^3 f_i(x(t), y(t), z(t)) x_i'(t) dt = \int_{-1}^{1} t - 2 dt = -4
+\end{equation}
+\\
+Per il primo integrale potremmo riparametrizzare la curva, ad esempio ponendo $u = \cos t$, ma non si guadagnerebbe molto. Svolgiamo l'integrale comunque:
+\begin{align}
+\int_{\gamma} \omega_0 &= \int_{0}^{\pi} - 3(\cos^3 t \sin t + \sin^2 t + 1)\cos^3 t \sin t + \nonumber\\
+&+ (\cos^6 t + \cos^3 t \sin t + 1)\cos t - \sin t \quad dt = \nonumber\\
+&= \int_{0}^{\pi} -3(\cos^5 t \sin^2 t + \cos^2 t \sin t - \cos^4 t \sin t + \cos^2 t \sin t) + \nonumber\\
+&+ \cos^7 t + \cos^4 t \sin t + \cos t -\sin t \quad dt 
+\end{align}
+Siccome stiamo integrando da $0$ a $\pi$ possiamo già dire che tutti gli integrali con potenze dispari di $\cos t$ saranno 0. Per gli altri abbiamo la derivata del coseno e si ntegrano facilmente dando:
+\begin{align}
+\int_{\gamma} \omega_0 &= \int_{0}^{\pi} -6\cos^2 t \sin t +4\cos^4 t \sin t - \sin t \: dt = \nonumber\\
+&= 2\cos^3 t - \frac{4}{5} \cos^5 t + \cos t \Big|_{0}^{\pi} = -\frac{22}{5}
+\end{align}
+
+\end{itemize}
+
+
+
+\end{document}
